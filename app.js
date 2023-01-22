@@ -35,6 +35,7 @@ let pictureArray2Item;
 let finalPictureArray = [];
 let counter = 0;
 let gameOn = false;
+let seconds = 10;
 
 const changePicture = (object, picture) => {
 	if(gameOn){
@@ -100,9 +101,6 @@ for(let i=0; i<finalPictureArray.length; i++){
 	}
 }
 
-
-let seconds = 10;
-
 const countdown = () => {
 	document.getElementById('countdown').innerHTML = seconds;
 	if(seconds == 0){
@@ -122,7 +120,9 @@ const showPictures = () => {
 
 let bMatch = document.getElementById('bMatch');
 
-bMatch.addEventListener('click', countdown);
+bMatch.addEventListener('click', function(){
+	setTimeout(countdown, 5000)
+})
 bMatch.addEventListener('click', showPictures)
 
 p1.addEventListener('click', function(){changePicture(this, finalRandomPictureArray[0])}, false);
