@@ -122,7 +122,9 @@ const showPictures = () => {
 
 let bMatch = document.getElementById('bMatch');
 
-bMatch.addEventListener('click', countdown);
+bMatch.addEventListener('click', function(){
+	setTimeout(countdown, 5000)
+})
 bMatch.addEventListener('click', showPictures)
 
 p1.addEventListener('click', function(){changePicture(this, finalRandomPictureArray[0])}, false);
